@@ -34,3 +34,10 @@ All three feature sets were compared by the performance (model fit, accuracy, Re
 A BiLSTM model and a GRU model were also used for comparison to the LSTM models.
 
 ## Results
+![Classification metrics of trained Deep Learning Networks](https://github.com/Athul041/RespSoundEvents/blob/main/Figures/10318d10-8be9-453b-aa55-bb9465fbf5da.png)
+
+### Feature-set selection
+The Spectrogram features alone are not enough to build a suitable model whereas combined with MFCCs they provide better overall performance in LSTM networks. Moreover, Mel Spectrogram features provide good sensitivity to adventitious events, specifically Stridor, as evident from the ROC curves, and provide comparable precision and recall to the former feature set, even with only 70% of features. This points to the fact that Spectral features in the Mel Scale are quite effective in this classification problem over Spectrogram features alone. The Mel frequency scale is designed to perceive frequencies similar to the human ear. This can also be associated with the fact that the labelling of events in this dataset has been done by ear by professionals.
+
+### BiLSTMs
+Compared to the LSTM and GRU models, the biLSTM model performs worse in the classification metrics as opposed to the initial guess. However, this performance difference is not very big considering it used half the number of hidden nodes and a single forward layer. The better performance of GRUs over LSTMs in this problem solidifies the notion that LSTM networks require more training data in order to generalize more, especially given the class imbalance in the dataset.
